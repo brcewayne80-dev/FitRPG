@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://bouyni58pbq2e"]
+
+[ext_resource type="Script" uid="uid://cavjgc02hnbbq" path="res://scripts/DefendValley.gd" id="1_tyyef"]
+[ext_resource type="Texture2D" uid="uid://opnockrd7v0q" path="res://art/tower/tower.png" id="1_w7k7a"]
+[ext_resource type="Script" uid="uid://ci2vjgak0wbrt" path="res://scripts/CameraShake.gd" id="2_3xc8a"]
+[ext_resource type="PackedScene" uid="uid://b5dqpfxi1d5c1" path="res://scenes/Outpost.tscn" id="2_8cteq"]
+[ext_resource type="Texture2D" uid="uid://cprg0swkjkkqq" path="res://art/background/Background.png" id="2_fxfwv"]
+[ext_resource type="PackedScene" uid="uid://c15fdlr1quyhu" path="res://scenes/Catapult.tscn" id="3_c88tv"]
+
+[node name="DefendValley" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_tyyef")
+spawn_interval = 0.75
+spawn_x_offset = 50.0
+damage_upgrade_step = 10.0
+shake_on_tower_hit = 0.5
+tower_hp_bar_size = Vector2(100, 10)
+tower_hp_bar_offset_from_contact = Vector2(-42, 15)
+outpost_hp_bar_offset_from_contact = Vector2(-36, 15)
+
+[node name="Outpost" parent="." instance=ExtResource("2_8cteq")]
+position = Vector2(424, 460)
+
+[node name="Catapult" parent="." instance=ExtResource("3_c88tv")]
+position = Vector2(217, 534)
+fire_frame_index = 4
+
+[node name="Tower" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-34, -9)
+
+[node name="Tower" type="Sprite2D" parent="Tower"]
+position = Vector2(106, 407)
+scale = Vector2(3.54688, 3.54688)
+texture = ExtResource("1_w7k7a")
+
+[node name="Archer1Muzzle" type="Marker2D" parent="Tower"]
+unique_name_in_owner = true
+position = Vector2(146, 509)
+
+[node name="Archer2Muzzle" type="Marker2D" parent="Tower"]
+unique_name_in_owner = true
+position = Vector2(142, 416)
+
+[node name="Archer3Muzzle" type="Marker2D" parent="Tower"]
+unique_name_in_owner = true
+position = Vector2(145, 370)
+
+[node name="ContactPoint" type="Marker2D" parent="Tower"]
+unique_name_in_owner = true
+position = Vector2(205, 591)
+
+[node name="Enemies" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1138, 578)
+
+[node name="Projectiles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Lanes" type="Node2D" parent="."]
+position = Vector2(1133, 586)
+
+[node name="Lane1" type="Marker2D" parent="Lanes"]
+position = Vector2(6, 7)
+
+[node name="Lane2" type="Marker2D" parent="Lanes"]
+position = Vector2(6, 7)
+
+[node name="Lane3" type="Marker2D" parent="Lanes"]
+position = Vector2(6, 7)
+
+[node name="Structures" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 329)
+script = ExtResource("2_3xc8a")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(577, 165)
+scale = Vector2(1.2582, 1.2582)
+texture = ExtResource("2_fxfwv")
+
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="LblWave" type="Label" parent="UI"]
+unique_name_in_owner = true
+visible = false
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 68.0
+offset_bottom = 91.0
+
+[node name="LblTowerHP" type="Label" parent="UI"]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 42.0
+offset_bottom = 59.0
+
+[node name="LblStatus" type="Label" parent="UI"]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 41.0
+offset_bottom = 30.0
+
+[node name="Dbg" type="Label" parent="UI"]
+unique_name_in_owner = true
+visible = false
+offset_left = 413.0
+offset_top = 45.0
+offset_right = 453.0
+offset_bottom = 68.0

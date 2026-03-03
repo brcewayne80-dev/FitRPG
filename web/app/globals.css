@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-bg text-white;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Hide scrollbars globally (kiosk TV mode) */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}

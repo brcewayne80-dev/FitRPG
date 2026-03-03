@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c15fdlr1quyhu"]
+
+[ext_resource type="Script" uid="uid://bw7hx88nr1tom" path="res://scripts/Catapult.gd" id="1_8mgo6"]
+[ext_resource type="Texture2D" uid="uid://bxnr13r5y0bau" path="res://art/catapult/1-1.png" id="1_kta28"]
+[ext_resource type="Texture2D" uid="uid://be27f2d7o8atr" path="res://art/catapult/1-2.png" id="2_8mgo6"]
+[ext_resource type="Texture2D" uid="uid://cq8oaf4cy0bpy" path="res://art/catapult/1-3.png" id="3_rm56o"]
+[ext_resource type="Texture2D" uid="uid://4o2t5bk63v60" path="res://art/catapult/1-4.png" id="4_82pjg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goewp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kta28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8mgo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rm56o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_82pjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_kta28")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[node name="Catapult" type="Node2D"]
+script = ExtResource("1_8mgo6")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.293961, 0.293961)
+sprite_frames = SubResource("SpriteFrames_goewp")
+animation = &"fire"
+frame = 3
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(11, -51)

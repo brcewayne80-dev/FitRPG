@@ -1,0 +1,17 @@
+[Unit]
+Description=FitRPG Next.js Dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/FitRPG/web
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=FLARE_LAUNCHER_PATH=/home/pi/FitRPG/pi/flare-launcher.js
+ExecStart=/usr/bin/node .next/standalone/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

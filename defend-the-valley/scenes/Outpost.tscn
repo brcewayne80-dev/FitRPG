@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5dqpfxi1d5c1"]
+
+[ext_resource type="Texture2D" uid="uid://ctrahxdxujoyy" path="res://art/tower/2nd tower.png" id="1_bt3jr"]
+
+[node name="Outpost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.42188, 2.42188)
+texture = ExtResource("1_bt3jr")
+
+[node name="Outpost1Archer" type="Marker2D" parent="."]
+position = Vector2(22, 104)
+
+[node name="Outpost2Archer" type="Marker2D" parent="."]
+position = Vector2(20, 24)
+
+[node name="Outpost3Archer" type="Marker2D" parent="."]
+position = Vector2(16, -31)
+
+[node name="OutpostContactPoint" type="Marker2D" parent="."]
+position = Vector2(38, 122)

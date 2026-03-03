@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvv4ntr81etf"]
+
+[ext_resource type="Script" uid="uid://bbde0dii5qtp8" path="res://scenes/ui/Settings.gd" id="1_asmva"]
+[ext_resource type="Script" uid="uid://nr00og0ians6" path="res://scripts/core/BackToHome.gd" id="2_asmva"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asmva")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 31.0
+offset_bottom = 29.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Info" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Manage your local data."
+
+[node name="BtnOpenData" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Open Data Folder"
+
+[node name="BtnReset" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reset All Data"
+
+[node name="Result" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "\"\""
+autowrap_mode = 3
+
+[node name="ToggleQuickActions" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Show Quick Actions on Dashboard"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+script = ExtResource("2_asmva")

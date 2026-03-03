@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="OhDang! Health App and Games"
+run/main_scene="uid://du6k51rhclwf0"
+config/features=PackedStringArray("4.4", "Mobile")
+
+[autoload]
+
+XP="*res://scripts/core/XPModel.gd"
+Ledger="*res://scripts/core/LedgerModel.gd"
+Objectives="*res://scripts/core/ObjectivesModel.gd"
+Prefs="*res://scripts/core/PrefsModel.gd"
+Weight="*res://scripts/core/WeightModel.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://km8oq8v4rb7h"
+
+[rendering]
+
+renderer/rendering_method="mobile"

@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcty3osgb6ud2"]
+
+[ext_resource type="Script" uid="uid://8vrdpkp040ft" path="res://scenes/ui/Dashboard.gd" id="1_57rwe"]
+
+[node name="Dashboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57rwe")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+text = "Health XP"
+horizontal_alignment = 1
+
+[node name="XPRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TotalXPLbl" type="Label" parent="Margin/VBox/XPRow"]
+layout_mode = 2
+text = "Total XP:"
+
+[node name="TotalXPVal" type="Label" parent="Margin/VBox/XPRow"]
+layout_mode = 2
+text = "0"
+
+[node name="AvailXPLbl" type="Label" parent="Margin/VBox/XPRow"]
+layout_mode = 2
+text = "Available XP:"
+
+[node name="AvailXPVal" type="Label" parent="Margin/VBox/XPRow"]
+layout_mode = 2
+text = "0"
+
+[node name="GridContainer" type="GridContainer" parent="Margin/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="BtnPlay" type="Button" parent="Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "Play Now"
+
+[node name="BtnObjectives" type="Button" parent="Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "Objectives"
+
+[node name="BtnStats" type="Button" parent="Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "Stats"
+
+[node name="BtnSettings" type="Button" parent="Margin/VBox/GridContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuickActions" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="QAAdd50" type="Button" parent="Margin/VBox/QuickActions"]
+layout_mode = 2
+text = "+50 XP (Quick)"
+
+[node name="TodayRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TodayLbl" type="Label" parent="Margin/VBox/TodayRow"]
+layout_mode = 2
+text = "Today:"
+
+[node name="TodayVal" type="Label" parent="Margin/VBox/TodayRow"]
+layout_mode = 2
+text = "0 / 0"
