@@ -5,9 +5,9 @@ Wants=graphical.target
 
 [Service]
 Type=simple
-User=pi
+User=rjudge
 Environment=DISPLAY=:0
-Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=XAUTHORITY=/home/rjudge/.Xauthority
 ExecStartPre=/bin/sleep 5
 ExecStart=/bin/bash -c '\
   unclutter -idle 0.1 -root & \

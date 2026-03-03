@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/home/pi/FitRPG/games/kaetram
-Environment=PATH=/home/pi/.nvm/versions/node/v20.20.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-ExecStart=/home/pi/.nvm/versions/node/v20.20.0/bin/node -r /home/pi/.nvm/versions/node/v20.20.0/lib/node_modules/tsx/dist/cli.mjs packages/server/src/main.ts
+User=rjudge
+WorkingDirectory=/home/rjudge/FitRPG/games/kaetram
+Environment=PATH=/home/rjudge/.nvm/versions/node/v20.20.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/rjudge/.nvm/versions/node/v20.20.0/bin/node -r /home/rjudge/.nvm/versions/node/v20.20.0/lib/node_modules/tsx/dist/cli.mjs packages/server/src/main.ts
 Restart=always
 RestartSec=5
 

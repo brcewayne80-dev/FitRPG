@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/home/pi/FitRPG/web
+User=rjudge
+WorkingDirectory=/home/rjudge/FitRPG/web
 Environment=NODE_ENV=production
 Environment=PORT=3000
-Environment=FLARE_LAUNCHER_PATH=/home/pi/FitRPG/pi/flare-launcher.js
+Environment=FLARE_LAUNCHER_PATH=/home/rjudge/FitRPG/pi/flare-launcher.js
 ExecStart=/usr/bin/node .next/standalone/server.js
 Restart=always
 RestartSec=5
